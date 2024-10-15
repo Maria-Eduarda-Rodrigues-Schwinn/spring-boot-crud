@@ -19,7 +19,7 @@ This project was build during a [live in my Youtube Channel](https://www.youtube
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/Maria-Eduarda-Rodrigues-Schwinn/spring-boot-crud.git
+git clone https://github.com/Maria-Eduarda-Rodrigues-Schwinn/spring-boot-crud-migrations.git
 ```
 
 2. Install dependencies with Maven
