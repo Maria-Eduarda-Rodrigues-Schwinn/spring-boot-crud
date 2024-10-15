@@ -73,4 +73,22 @@ public class ProductController {
         return ResponseEntity.notFound().build();
 
     }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public ResponseEntity<Void> deleteProduct(@PathVariable Long id) {
+
+        Optional<Product> optionalProduct = repository.findById(id);
+
+        if (optionalProduct.isPresent()) {
+
+            Product product = optionalProduct.get();
+
+            product.setActive(false);
+
+            return ResponseEntity.noContent().build();
+        }
+
+        return ResponseEntity.notFound().build();
+    }
 }
