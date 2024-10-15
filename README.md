@@ -1,5 +1,9 @@
 # Simple CRUD
-This repository contains a simple CRUD project built using Java Spring. The aim of this repository is to practice and share how you can build all CRUD Methods using Java Spring.
+
+![let's code](https://media.giphy.com/media/HscDLzkO8EOTmgkhQP/giphy.gif?cid=ecf05e47heqzh377n09mrb4emybd32kulxg8ho8mdutap8e2&ep=v1_gifs_search&rid=giphy.gif&ct=g)
+
+This repository contains a simple CRUD project built using Java Spring. The aim of this repository is to practice and
+share how you can build all CRUD Methods using Java Spring.
 
 This project was build during a [live in my Youtube Channel](https://www.youtube.com/watch?v=tP6wtEaCnSI).
 
@@ -25,8 +29,8 @@ git clone https://github.com/Fernanda-Kipper/live-crud-java-spring.git
 1. Start the application with Maven
 2. The API will be accessible at http://localhost:8080
 
-
 ## API Endpoints
+
 The API provides the following endpoints:
 
 ```markdown
@@ -40,6 +44,7 @@ DELETE / - Delete data.
 ```
 
 ## Database
+
 The project utilizes PostgresSQL as the database. The necessary database migrations are managed using Flyway.
 
 To [install PostgresSQL])(https://www.postgresql.org/download/) you can install here.
