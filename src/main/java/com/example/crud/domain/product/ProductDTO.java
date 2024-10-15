@@ -17,4 +17,6 @@ public class ProductDTO {
 
     private Integer price_in_cents;
 
+    private boolean active;
+
 }
