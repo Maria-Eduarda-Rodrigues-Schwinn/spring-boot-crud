@@ -24,13 +24,14 @@ public class ProductController {
     @GetMapping
     public ResponseEntity<List<ProductDTO>> getAllProducts() {
 
-        var allProducts = repository.findAll();
+        var allProducts = repository.findAllByActiveTrue();
 
         var productDTOs = allProducts.stream()
                 .map(product -> new ProductDTO(
                         product.getId(),
                         product.getName(),
-                        product.getPrice_in_cents()))
+                        product.getPrice_in_cents(),
+                        product.isActive()))
                 .collect(Collectors.toList());
 
         return ResponseEntity.ok(productDTOs);
@@ -62,7 +63,8 @@ public class ProductController {
             ProductDTO productDTO = new ProductDTO(
                     product.getId(),
                     product.getName(),
-                    product.getPrice_in_cents()
+                    product.getPrice_in_cents(),
+                    product.isActive()
             );
 
             return ResponseEntity.ok(productDTO);
