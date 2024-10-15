@@ -4,6 +4,7 @@ import com.example.crud.domain.product.Product;
 import com.example.crud.domain.product.ProductDTO;
 import com.example.crud.domain.product.ProductRepository;
 import com.example.crud.domain.product.ProductRequest;
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +39,7 @@ public class ProductController {
     }
 
     @PostMapping
-    public ResponseEntity<Void> registerProduct(@RequestBody @Valid ProductRequest data) {
+    public ResponseEntity registerProduct(@RequestBody @Valid ProductRequest data) {
 
         Product newProduct = new Product(data);
 
@@ -70,13 +71,13 @@ public class ProductController {
             return ResponseEntity.ok(productDTO);
         }
 
-        return ResponseEntity.notFound().build();
+        throw new EntityNotFoundException();
 
     }
 
     @DeleteMapping("/{id}")
     @Transactional
-    public ResponseEntity<Void> deleteProduct(@PathVariable Long id) {
+    public ResponseEntity deleteProduct(@PathVariable Long id) {
 
         Optional<Product> optionalProduct = repository.findById(id);
 
@@ -89,6 +90,6 @@ public class ProductController {
             return ResponseEntity.noContent().build();
         }
 
-        return ResponseEntity.notFound().build();
+        throw new EntityNotFoundException();
     }
 }
